@@ -98,6 +98,3 @@ func SampleUsage() {
 	fmt.Println(zar1.Short(), zar1.CurrencyDescription())
 	fmt.Println(zar2.Short(), zar2.CurrencyDescription())
 }
-
-// references
-// https://floating-point-gui.de/formats/integer/   : see the note and warning NOT to use integers if at all possible.
