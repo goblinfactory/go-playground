@@ -70,7 +70,7 @@ func TestAccountService() {
 
 Produces the following output
 
-![screenshot.png](screenshot.png)
+![Screenshot.png](Screenshot.png)
 
 #### Adding additional currencies
 
