@@ -50,7 +50,7 @@ You can't add or substract different currency types. Compiler will prevent that.
 
 #### Experimental code only of course
 
-In order to get type safety (without code generation or generics) you need to implement (add) 1 new file per currency and implement the following reciever methods.
+In order to get type safety (without code generation or generics) you need to implement (add) 1 new file per currency and implement the following reciever methods. **_ example below is from `gbp.go` _**
 
 ```go
 package money
