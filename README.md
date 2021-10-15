@@ -48,9 +48,33 @@ gbp2:= gbp1.Clone(123.45)
 
 You can't add or substract different currency types. Compiler will prevent that.
 
-#### Experimental code only of course
+#### Small account service created using the currency types
 
-In order to get type safety (without code generation or generics) you need to implement (add) 1 new file per currency and implement the following reciever methods. **_ example below is from `gbp.go` _**
+Example code can be run as follows
+
+```go
+func TestAccountService() {
+	as := accountservice.New("accounts.json")
+	as.CreateAccount("H1", "Harrys account", money.NewGBP(0.01))
+	as.CreateAccount("H2", "Haggard account", money.NewGBP(4500))
+	as.CreateAccount("N1", "Nelly account1", money.NewZAR(18325.01))
+	as.CreateAccount("N2", "Nelly account2", money.NewZAR(18325.99))
+	as.CreateAccount("C1", "Chandler account", money.NewGBP(50.95))
+	as.Dump()
+	fmt.Println("---")
+	as.Transfer("H2", "H1", money.NewGBP(0.01))
+	as.Dump()
+}
+
+```
+
+Produces the following output
+
+![screenshot.png](screenshot.png)
+
+#### Adding additional currencies
+
+In order to get type safety (without code generation or generics) you need to implement (add) 1 new file per additional currency and implement the following reciever methods. **_ example below is from `gbp.go` _**
 
 ```go
 package money
